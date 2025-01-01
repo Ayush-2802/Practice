@@ -42,3 +42,8 @@ print("After insert at start:", fruits)
 # Extending with multiple fruits
 fruits.extend(['mango', 'kiwi'])
 print("After extend:", fruits)
+
+# inset nothiong
+lstx = [1, 2, 3, 4, 5]
+lstx[1,3] = []
+print(lstx) # [1, 4, 5]
