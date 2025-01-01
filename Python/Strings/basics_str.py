@@ -28,4 +28,4 @@ print(str.count("a")) # counts occurrences of 'a' in string
 str1 = "he said \" hello \" to me"
 str2 = "Masala \n Dosa"
 print(str1)
-print(str2, end="")
+print(str2)
