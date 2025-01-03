@@ -1,7 +1,10 @@
 class Car:
     def __init__(self, brands, model):
-        self.brands = brands
+        self.__brands = brands
         self.model = model
+
+    def get_brands(self):
+        return self.__brands
 
     def full_name(self):
         return (f"Brand:{self.brands} Model: {self.model}")
@@ -12,4 +15,4 @@ class EV(Car):
         self.battery_cap = battery_cap
 
 obj = EV("Tesla","ModelS","85KW")
-print(obj.full_name(),"Battery:",obj.battery_cap)
+print(obj.get_brands())
