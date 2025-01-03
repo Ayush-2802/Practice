@@ -13,6 +13,10 @@ class Car:
 
     def fuel_type(self):
         return "petrol or diesel"
+    
+    @staticmethod
+    def general_disc():
+        return "Cars are awsome"
 
 class EV(Car):
     def __init__(self, brands,model,battery_cap):
@@ -22,9 +26,10 @@ class EV(Car):
     def fuel_type(self):
         return "electri charge"
 
-EV("Tesla","ModelS","85KW")
+obj = EV("Tesla","ModelS","85KW")
 Car("Tata","Safari")
 Car("MarutiSuzuki","WagonR")
 Car("Mahindara","bulero")
 
-print(Car.total_cars)
+print(Car.general_disc())
+# print(obj.general_disc())

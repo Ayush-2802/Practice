@@ -8,13 +8,14 @@ class Car:
     def get_brands(self):
         return self.__brands
 
-    def full_name(self):
-        return (f"Brand:{self.brands} Model: {self.model}")
-
     def fuel_type(self):
         return "petrol or diesel"
+    
+    @staticmethod
+    def general_disc():
+        return "Cars are awsome"
 
-class EV(Car):
+class Ev(Car):
     def __init__(self, brands,model,battery_cap):
         super().__init__(brands,model)
         self.battery_cap = battery_cap
@@ -22,9 +23,7 @@ class EV(Car):
     def fuel_type(self):
         return "electri charge"
 
-EV("Tesla","ModelS","85KW")
-Car("Tata","Safari")
-Car("MarutiSuzuki","WagonR")
-Car("Mahindara","bulero")
+obj = Ev("Tesla","ModelS","85KW")
 
-print(Car.total_cars)
+print(isinstance(obj,Car))
+print(isinstance(obj,Ev))
