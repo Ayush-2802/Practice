@@ -1,26 +1,17 @@
-class Solution(object):
-    def productExceptSelf(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
-        n = len(nums)
-        res = [1] * n
+class Solution:  # Remove (object) as it's not needed in Python 3
+    def productExceptSelf(self, nums: List[int]) -> List[int]:  # Add type hints
+        res = [1] * len(nums)
         
         # Calculate prefix products
         prefix = 1
-        for i in range(n):
+        for i, num in enumerate(nums):  # Use enumerate instead of range
             res[i] = prefix
-            prefix *= nums[i]
+            prefix *= num
             
         # Calculate suffix products
         suffix = 1
-        for i in range(n-1, -1, -1):
+        for i in range(len(nums) - 1, -1, -1):
             res[i] *= suffix
             suffix *= nums[i]
             
         return res
-
-
-nums = [1,2,3,4]
-print(Solution().productExceptSelf(nums))
