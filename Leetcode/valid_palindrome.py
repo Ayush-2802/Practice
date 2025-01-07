@@ -3,6 +3,7 @@ class Solution:
 
         new = ''.join([i for i in s[::-1] if i.isalnum()])
         s = ''.join([i for i in s if i.isalnum()])
+        
         if new.lower() == s.lower():
             return True
         else:
