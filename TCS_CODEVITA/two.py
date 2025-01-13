@@ -1,5 +1,4 @@
 import math
-# 
 
 def orientation(point1, point2, point3):
     """
@@ -12,7 +11,7 @@ def orientation(point1, point2, point3):
           (point2[0] - point1[0]) * (point3[1] - point2[1])
     if val == 0:
         return 0
-    return 2 if val > 0 else 1
+    return 1 if val > 0 else 2
 
 def get_convex_hull(points):
     """

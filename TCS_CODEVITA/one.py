@@ -1,67 +1,66 @@
 from collections import deque
 from typing import List, Tuple
+from heapq import heappush, heappop
 
 def read_input() -> Tuple[List[List[str]], List[List[int]], int, Tuple[int, int], Tuple[int, int]]:
-    rows, cols = map(int, input().split())
-    grid = []
-    time_matrix = []
-    start = None
-    dest = None
-    for i in range(rows):
-        row = input().split()
-        for j in range(len(row)):
-            if row[j] == 'S':
-                start = (i, j)
-            elif row[j] == 'D':
-                dest = (i, j)
-        grid.append(row)
-    for i in range(rows):
-        row = list(map(int, input().split()))
-        time_matrix.append(row)
-        
-    initial_strength = int(input())
-    return grid, time_matrix, initial_strength, start, dest
-
-def get_shark_strength(cell: str) -> int:
-    return 0 if cell in ['S', 'D'] else int(cell)
-
-def find_shortest_path(grid: List[List[str]], time_matrix: List[List[int]], initial_strength: int, 
-                      start: Tuple[int, int], dest: Tuple[int, int]) -> Tuple[int, int]:
-    rows, cols = len(grid), len(grid[0])
-    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
-    # Queue stores (row, col, strength, total_time)
-    queue = deque([(start[0], start[1], initial_strength, 0)])
-    visited = set()
+    grid_height, grid_width = map(int, input().split())
+    ocean_grid = []
+    travel_time = []
+    start_position = None
+    destination = None
     
-    while queue:
-        row, col, strength, total_time = queue.popleft()
+    # Pre-allocate lists for better memory efficiency
+    ocean_grid = [None] * grid_height
+    travel_time = [None] * grid_height
+    
+    for row_idx in range(grid_height):
+        current_row = input().split()
+        for col_idx in range(grid_width):  # Use grid_width instead of len()
+            if current_row[col_idx] == 'S':
+                start_position = (row_idx, col_idx)
+            elif current_row[col_idx] == 'D':
+                destination = (row_idx, col_idx)
+        ocean_grid[row_idx] = current_row
         
-        if (row, col) == dest:
-            return total_time, strength
-            
-        for dx, dy in directions:
-            new_row, new_col = row + dx, col + dy
-            if (0 <= new_row < rows and 0 <= new_col < cols and 
-                (new_row, new_col, strength) not in visited):
-                
-                new_strength = strength - 1  # Basic movement cost
-                shark_strength = get_shark_strength(grid[new_row][new_col])
-                new_strength -= shark_strength
-                new_time = total_time + time_matrix[new_row][new_col]
+    for row_idx in range(grid_height):
+        travel_time[row_idx] = list(map(int, input().split()))
+    
+    return ocean_grid, travel_time, int(input()), start_position, destination
 
-                if new_strength >= 0:
-                    visited.add((new_row, new_col, new_strength))
-                    queue.append((new_row, new_col, new_strength, new_time))
+def find_shortest_path(ocean_grid: List[List[str]], travel_time: List[List[int]], diver_strength: int, 
+                      start_position: Tuple[int, int], destination: Tuple[int, int]) -> Tuple[int, int]:
+    grid_height, grid_width = len(ocean_grid), len(ocean_grid[0])
+    possible_moves = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+    
+    # Use priority queue for optimal path finding
+    pq = [(0, diver_strength, start_position[0], start_position[1])]
+    explored_positions = {start_position: diver_strength}
+    
+    while pq:
+        elapsed_time, remaining_strength, current_row, current_col = heappop(pq)
+        
+        if (current_row, current_col) == destination:
+            return elapsed_time, remaining_strength
+            
+        for move_row, move_col in possible_moves:
+            next_row, next_col = current_row + move_row, current_col + move_col
+            if 0 <= next_row < grid_height and 0 <= next_col < grid_width:
+                cell = ocean_grid[next_row][next_col]
+                shark_power = 0 if cell in 'SD' else int(cell)
+                updated_strength = remaining_strength - 1 - shark_power
+                
+                if updated_strength >= 0:
+                    current_best = explored_positions.get((next_row, next_col), -1)
+                    if updated_strength > current_best:
+                        updated_time = elapsed_time + travel_time[next_row][next_col]
+                        explored_positions[(next_row, next_col)] = updated_strength
+                        heappush(pq, (updated_time, updated_strength, next_row, next_col))
     
     return -1, -1
 
 def main():
-    grid, time_matrix, initial_strength, start, dest = read_input()
-    time, remaining_strength = find_shortest_path(grid, time_matrix, initial_strength, start, dest)
-    if time == -1:
-        print("Not Possible")
-    else:
-        print(time, remaining_strength)
+    result = find_shortest_path(*read_input())
+    print("Not Possible" if result[0] == -1 else f"{result[0]} {result[1]}")
 
 if __name__ == "__main__":
     main()
