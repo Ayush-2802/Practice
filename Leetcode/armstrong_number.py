@@ -1,5 +1,5 @@
 num = int(input("Enter The number :"))
-N=num
+N = num
 res = 0
 
 while num :
