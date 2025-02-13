@@ -5,7 +5,6 @@ def numpr(n):
     
     # Recursive call with n-1 first
     numpr(n-1)
-    
     # Print current number
     print(n)
 
