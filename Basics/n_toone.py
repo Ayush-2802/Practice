@@ -1,8 +1,14 @@
+def numpr(n):
+    # Base case
+    if n < 1:
+        return
+    
+    # Recursive call with n-1 first
+    numpr(n-1)
+    
+    # Print current number
+    print(n)
+
+# Get input and call function
 n = int(input())
-
-def n_to_one(i,n):
-    if i<n:
-        print(i)
-    n_to_one(i-1,n)
-
-n_to_one(n,n)
+numpr(n)

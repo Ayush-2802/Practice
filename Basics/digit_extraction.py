@@ -1,15 +1,12 @@
-import math
-
-n = -7789
+N = 7789
+n = N
 res = 0
+c = 0
+while n > 0:
+    res = int(n%10)
+    n = int(n/10)
+    if N%res == 0:
+        c += 1
+print(c)
 
-# l = math.log10(n)+1
-# print(int(l))
-
-rev = 0
-while n < 0:
-    res = n%10
-    n = n/10
-    rev = (rev*10)+res
-
-print(rev)
+    
