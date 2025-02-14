@@ -1,6 +1,7 @@
 arr = list(map(int,input("Enter the array: ").split()))
 n = len(arr)
 
+#puts maximum element at last
 def bubbleSort(arr):
     for i in range(n-1,0,-1):
         #adjacent swap
