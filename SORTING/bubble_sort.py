@@ -29,3 +29,6 @@ def bubbleSortOptimized(arr):
 
 bubbleSortOptimized(arr)
 print(arr)
+
+
+# recursive approach

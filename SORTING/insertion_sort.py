@@ -10,3 +10,6 @@ def insertionSort(arr):
 
 insertionSort(arr)
 print(arr)
+
+
+# recursive approach
