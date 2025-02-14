@@ -11,3 +11,9 @@ def selectionSort(arr):
 selectionSort(arr)
 print(arr)
 
+
+# Time complexity analysis
+# n+(n-1)+(n-1)+....2+1 
+# (n * n+1)/2
+# n**2/n + n/2
+# BigO(n^2) - Best,Worst,Avg
