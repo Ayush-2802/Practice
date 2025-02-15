@@ -1,6 +1,7 @@
 arr = list(map(int, input("Enter array elements separated by space: ").split()))
 l = len(arr)
 
+# puts min element at front
 def selectionSort(arr):
     for i in range(l):
         min_ele = i
