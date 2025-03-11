@@ -17,6 +17,7 @@ def part(arr,low,high):
             arr[i] , arr[j] = arr[j] , arr[i]
     
     arr[low] , arr[j] = arr[j] , arr[low]
+    
     return j
 
 def quick_sort(arr,low,high):
