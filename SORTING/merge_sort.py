@@ -28,7 +28,6 @@ def merge(arr,low,mid,high):
 
 def merge_sort(arr,low,high):
     if low == high : return
-    
     mid = (low+high)//2
     merge_sort(arr,low,mid)
     merge_sort(arr,mid+1,high)
@@ -66,7 +65,7 @@ def merge(arr,low,mid,high):
     for i in range (len(temp)):
         arr[low+1] = temp[i]
 
-def merge_sort(arr,low,hig):
+def merge_sort(arr,low,high):
     if low == high : return
     mid = (low+high)//2
     merge_sort(arr,low,mid)
@@ -98,13 +97,14 @@ class Solution:
             right+=1
         
         for i in range(len(temp)):
-            arr[i+1] = temp[i]
+            arr[low+1] = temp[i]
             
             
     def mergeSort(self,arr, low, high):
         #code here
         if low == high : return
         mid = (low+high)//2
-        mergeSort(arr,low,mid)
-        mergeSort(arr,mid+1,high)
-        merge(arr,low,mid,high)
+        self.mergeSort(arr,low,mid)
+        self.mergeSort(arr,mid+1,high)
+        self.merge(arr,low,mid,high)
+        
