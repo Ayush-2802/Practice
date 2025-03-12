@@ -1,0 +1,1 @@
+arr = list(map(int,input("enter the array: ").split()))
