@@ -16,12 +16,27 @@ def longestSubarray(arr,n,k):  # optimal for +ve , -ve
 
 
 
-def longsubarr(arr,k,n):
-    pass
+def longsubarr(arr,n,k):
+    left = 0
+    right = 0
+    s = arr[0]
+    l = 0
+
+    while right < n:
+        while(left <= right and s > k):
+            s -= arr[left]
+            left += 1
+        if s == k:
+            l = max(l,right-left+1)
+        right += 1
+        if right < n :
+            s += arr[right]
+
+    return l
 
 arr = list(map(int,input("enter the array: ").split()))
 k = int(input("Enter the value Of K: "))
 n = len(arr)
 
-print(longestSubarray(arr,n,k))
+print(longsubarr(arr,n,k))
 
