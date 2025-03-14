@@ -8,7 +8,10 @@ def intersection(a,b):
 
 
 def missingNumber(nums: List[int]) -> int:
-        n = len(nums)
-        temp = list(range(n))
-        res = set(temp) - set(nums)
-        return res
+    n = len(nums)
+    # Expected sum of numbers from 0 to n
+    expected_sum = (n * (n + 1)) // 2
+    # Actual sum of numbers in array
+    actual_sum = sum(nums)
+    # Missing number is the difference
+    return expected_sum - actual_sum
