@@ -19,4 +19,22 @@ def majorityElementBetter(arr,n):
             return k
 
 def majorityElementOptimal(arr,n):
-    pass
+    ele = None
+    c = 0
+
+    for i in range(len(arr)):
+        if c == 0:
+            c = 1
+            ele = arr[i]
+        elif arr[i] == ele:
+            c += 1
+        else:
+            c -= 1
+    
+    c1 = 0
+    for i in range(n):
+        if arr[i] == ele:
+            c1 +=1
+    
+    if c1 > n/2:
+        return ele
