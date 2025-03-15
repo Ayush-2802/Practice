@@ -1,4 +1,4 @@
-#brute
+#brute  O(n^2)
 def majorityElementbrute(arr,n):
     for i in range(n):
         c = 0
@@ -7,6 +7,6 @@ def majorityElementbrute(arr,n):
                 c+=1
         if c > n/2 : return arr[i]
 
-#better
+#better 
 def majorityElementBetter(arr,n):
     pass
