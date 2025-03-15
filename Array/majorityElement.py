@@ -9,4 +9,14 @@ def majorityElementbrute(arr,n):
 
 #better 
 def majorityElementBetter(arr,n):
+    d = {}
+
+    for i in range(n):
+        d[arr[i]] = d.setdefault(arr[i],0) + 1
+    
+    for k in d:
+        if d[k] > n/2 :
+            return k
+
+def majorityElementOptimal(arr,n):
     pass
