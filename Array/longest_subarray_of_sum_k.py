@@ -39,4 +39,3 @@ k = int(input("Enter the value Of K: "))
 n = len(arr)
 
 print(longsubarr(arr,n,k))
-
