@@ -20,6 +20,4 @@ class Solution:
                 break
                 
         # Use slice assignment with reverse
-        nums[brp+1:] = nums[brp+1:][::-1]
-
-        
+        nums[brp+1:] = nums[brp+1:][::-1]        
