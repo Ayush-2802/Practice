@@ -5,4 +5,4 @@ def getDataframeSize(players: pd.DataFrame) -> List[int]:
     #returns row and columns
 
     #size
-    players.size
+    return players.size
