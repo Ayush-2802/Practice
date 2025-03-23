@@ -82,3 +82,20 @@ mat = [[1,1,1],[1,0,1],[1,1,1]]
 # Call the optimal function and print the result
 setMatrixZeroOptimal(mat)
 print(mat)
+
+def setMatrixZeroNew(mat):
+    n = len(mat)
+    m = len(mat[0])
+    r = set()
+    c = set()
+
+    for i in range(n):
+        for j in range(m):
+            if mat[i][j] == 0:
+                r.add(i)
+                c.add(j)
+
+    for i in range(n):
+        for j in range(m):
+            if i in r or j in c:
+                mat[i][j] = 0

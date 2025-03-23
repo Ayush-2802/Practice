@@ -1,3 +1,7 @@
+# complexity 
+#time -> O(n*n/2)
+#space ->
+
 def RotateImage(mat):
     n = len(mat)
     # Transpose the matrix (swap rows with columns)
