@@ -15,7 +15,7 @@ def subarraySumOptimal(nums,n,k):
     for i in range(n):
         preS+=nums[i]
         remove = preS-k
-        c += d[remove]
-        d[preS] += 1
+        c += d.get(remove, 0)
+        d[preS] = d.get(preS, 0) + 1
     
     return c
