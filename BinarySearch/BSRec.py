@@ -1,7 +1,7 @@
 class BS:
     def rec(self,nums,target,low,high):
         if low> high: return -1
-        mid = (low+high)//2
+        mid = low + (high-low)//2 #overflow prevention
         if nums[mid] == target: return mid
         elif target > nums[mid]: return self.rec(nums,target,low,mid-1)
         else: return self.res(nums,target,mid+1,high)
