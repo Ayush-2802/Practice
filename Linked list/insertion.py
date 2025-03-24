@@ -8,6 +8,9 @@ def InsertionAtFront(head,new_data):
     new.next = head
     return new
 
+def InsertionAtEnd():
+    pass
+
 def printList(head):
     c = head
     while c is not None:
