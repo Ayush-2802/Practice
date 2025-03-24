@@ -11,6 +11,13 @@ def search(head,x):
         cur = cur.next
     return False
 
+def searchKey(self, n, head, key):
+    while head:
+        if head.data == key:
+            return True
+        head = head.next
+    return False
+
 if __name__=="__main__":
     head = node(10)
     head.next = node(20)
@@ -18,7 +25,7 @@ if __name__=="__main__":
     head.next.next.next = node(20)
     x = 30
 
-    if search(head,x):
+    if searchKey(head,x):
         print("yes")
     else: 
         print("No")
