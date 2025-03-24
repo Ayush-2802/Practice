@@ -11,6 +11,13 @@ def lenList(head):
         c = c.next
     return l
 
+def lenL(head):
+    l = 0
+    while head:
+        l += 1
+        head = head.next
+    return l
+
 if __name__=="__main__":
     head = node(1)
     head.next = node(2)
@@ -18,3 +25,6 @@ if __name__=="__main__":
     head.next.next.next = node(4)
 
     print(lenList(head)) #4
+
+
+
