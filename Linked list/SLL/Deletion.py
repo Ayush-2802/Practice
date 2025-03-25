@@ -56,7 +56,22 @@ if __name__=="__main__":
     head = node(10)
     head.next = node(20)
     head.next.next = node(30)
+    head.next.next.next = node(40)
+    print("Original List: ",end="")
     PrintList(head)
     print("")
-    head = Deletion.DelAtPos(head,3)
+
+    head = Deletion.DelAtPos(head,2)
+    print("After Deletion At Front List: ",end="")
     PrintList(head)
+    print("")
+
+    head = Deletion.DelAtFront(head)
+    print("After Deletion At Front List: " ,end="")
+    PrintList(head)
+    print("")
+
+    head = Deletion.DelAtLast(head)
+    print("After Deletion At Last List: ",end="")
+    PrintList(head)
+    print("")
