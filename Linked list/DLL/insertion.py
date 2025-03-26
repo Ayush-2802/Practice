@@ -69,10 +69,13 @@ if __name__ == "__main__":
     third.prev = second
     third.next = fourth
     fourth.prev = third
+
     print("Before Insertion: ",end = "")
     printList(head)
 
-    head = insert.Pos(head,1,3)
+    head = insert.Front(head,1)
+    head = insert.End(head,1)
+    head = insert.Pos(head,1,4)
     
     print("After Insertion: ",end = "")
     printList(head)
