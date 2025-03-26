@@ -44,6 +44,7 @@ def merge(leftHead,rightHead):
             temp.next = rightHead
             temp = rightHead
             rightHead = rightHead.next
+            
     if leftHead : temp.next = leftHead
     else: temp.next = rightHead
 
