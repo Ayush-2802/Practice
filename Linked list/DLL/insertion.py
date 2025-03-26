@@ -39,8 +39,7 @@ class insert:
             temp = temp.next
         
         if temp is None:
-            insert.End(head,data)
-            return head
+            return insert.End(head,data)
         
         new.next = temp.next
         new.prev = temp

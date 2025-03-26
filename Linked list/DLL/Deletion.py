@@ -80,3 +80,26 @@ if __name__ == "__main__":
     
     print("After Insertion: ",end = "")
     printList(head)
+
+    def pos(head,pos):
+        if head == None:
+            return None
+        
+        temp = head
+        for _ in range(1,pos-1):
+            if temp is None:
+                return head #out of bound
+            temp = temp.next
+
+        if temp.prev != None:
+            temp.prev.next = temp.next
+
+        if temp.next != None:
+            temp.next.prev = temp.prev
+
+        if temp == head:
+            head = temp.next
+
+        del temp
+        return head
+    
