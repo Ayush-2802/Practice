@@ -44,7 +44,7 @@ if __name__=="__main__":
     print(f"Stack: {s.arr}")
     print(s.pop(), "popped from stack")
     print("Top element is:", s.peek())
-    
+
     print("Elements present in stack:", end=" ")
     while not s.IsEmpty():
         print(s.peek(), end=" ")
