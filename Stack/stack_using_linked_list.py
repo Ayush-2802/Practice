@@ -19,4 +19,8 @@ class stack:
         self.head = self.head.next
         return pop
     
+    def peek(self):
+        return self.head.data
     
+    def IsEmpty(self):
+        return self.head == None
