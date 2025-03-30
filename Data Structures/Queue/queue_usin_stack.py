@@ -1,4 +1,4 @@
-class stack:
+class queue:
     def __init__(self):
         self.s1 = []
         self.s2 = []
