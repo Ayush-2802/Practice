@@ -1,4 +1,4 @@
-class queue:
+class stack:
     def __init__(self):
         self.q = []
 
@@ -21,5 +21,4 @@ class queue:
     
     def empty(self):
         return len(self.q) == 0
-    
     
