@@ -6,7 +6,7 @@ class queue:
     def push(self, x: int) -> None:
         self.s1.append(x)
 
-    def pop(self) -> int:
+    def pop(self) -> int: 
         self.peek()
         return self.s2.pop()
 
