@@ -16,6 +16,8 @@ class Queue:
     def get_front(self):
         return -1 if self.is_empty() else self.q[0]
 
+        
+
     def display(self):
         print(' '.join(map(str, self.q)))
 
