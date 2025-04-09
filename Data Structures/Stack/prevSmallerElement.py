@@ -1,7 +1,7 @@
 def prevsmallerele(nums):
-    n = len (nums)
+    n = len(nums)
     st = []
-    pse = []
+    pse = [-1] * n 
 
     for i in range(n):
         while len(st) > 0 and st[-1] >= nums[i]:
@@ -12,5 +12,5 @@ def prevsmallerele(nums):
         else:
             pse[i] = st[-1]
 
-        st.append(nums[i%n])
+        st.append(nums[i])
     return pse
