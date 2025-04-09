@@ -12,9 +12,38 @@ def trap(self, height: List[int]) -> int:
     for i in range(n-2, -1, -1):
         rightmax[i] = max(rightmax[i+1], height[i])  # Use max instead of min
 
-
     for i in range(len(height)):
         if height[i] < leftmax[i] and height[i] < rightmax[i]:
             total += min(leftmax[i], rightmax[i]) - height[i]
         
+    return total
+
+
+def trap(self, height: List[int]) -> int:
+    left = 0
+    right = len(height) - 1
+    leftMax = height[left]
+    rightMax = height[right]
+    total = 0
+    
+    while left < right:
+        if height[left] < height[right]:
+            # Process from left side
+            if height[left] >= leftMax:
+                # Update left max
+                leftMax = height[left]
+            else:
+                # Add trapped water
+                total += leftMax - height[left]
+            left += 1
+        else:
+            # Process from right side
+            if height[right] >= rightMax:
+                # Update right max
+                rightMax = height[right]
+            else:
+                # Add trapped water
+                total += rightMax - height[right]
+            right -= 1
+    
     return total
