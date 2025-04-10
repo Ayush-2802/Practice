@@ -47,3 +47,29 @@ def trap(self, height: List[int]) -> int:
             right -= 1
     
     return total
+
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        l = 0
+        r = len(height)-1
+
+        leftmax = height[l]
+        rightmax = height[r]
+
+        total = 0
+
+        while l < r:
+            if height[l] < height[r]:
+                if height[l] >= leftmax:
+                    leftmax = height[l]
+                else:
+                    total += leftmax - height[l]
+                leftmax += 1
+            else:
+                if height[r] >= rightmax:
+                    rightmax = height[r]
+                else:
+                    total += rightmax - height[r]
+                rightmax -= 1
+        
+        return total
