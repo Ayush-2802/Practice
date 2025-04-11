@@ -1,0 +1,29 @@
+\section{Results and Analysis}
+\subsection{Forecasting Performance}
+The ARIMA forecasting models demonstrated strong predictive performance across the key parameters:
+
+\input{tables/forecasting}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.9\linewidth]{figures/forecasting-results.pdf}
+\caption{Visualization of forecasting performance for key parameters showing actual values (solid lines) versus predicted values (dashed lines) with 95\% confidence intervals (shaded regions).}
+\label{fig:forecasting_results}
+\end{figure}
+
+\subsection{Classification Performance}
+Table \ref{table:classification} presents the performance metrics for different classification algorithms on the test dataset:
+
+\input{tables/classification}
+
+\subsection{Comparison with Baseline Methods}
+Our hybrid approach significantly outperformed baseline methods across all evaluation metrics:
+
+\input{tables/baseline}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.9\linewidth]{figures/comparative-results.pdf}
+\caption{Comparative performance visualization showing prediction accuracy and lead time across different maintenance approaches, highlighting the advantages of our hybrid model.}
+\label{fig:comparative_results}
+\end{figure}

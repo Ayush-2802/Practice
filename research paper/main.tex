@@ -1,0 +1,56 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{colortbl}
+
+\definecolor{lightgray}{gray}{0.9}
+\definecolor{verylightgray}{gray}{0.95}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+    
+\begin{document}
+
+\title{Machine Learning for Predictive Maintenance of Industrial Machines using IoT Sensor Data: A Case Study on Slitting Machines\\
+}
+
+\author{
+\IEEEauthorblockN{Ayush Mishra\textsuperscript{1}, Akshat Tewari\textsuperscript{1}, Aman Anand\textsuperscript{1}, Akash Garg\textsuperscript{1}, Nansi Jain\textsuperscript{1}}
+\IEEEauthorblockA{\textsuperscript{1}Department of CSE (Data Science), Inderprastha Engineering College, Ghaziabad, India \\
+ayushmishra2802@gmail.com}
+}
+
+\maketitle
+
+\input{sections/abstract}
+
+\begin{IEEEkeywords}
+Predictive Maintenance (PdM), Internet of Things (IoT), Machine Learning (ML), Hybrid Models, ARIMA Forecasting, Fault Detection, Industrial Machines, Sensor Data Analysis
+\end{IEEEkeywords}
+
+\input{sections/introduction}
+\input{sections/related-work}
+\input{sections/iot-infrastructure}
+\input{sections/time-series-analysis}
+\input{sections/feature-engineering}
+\input{sections/hybrid-model}
+\input{sections/implementation}
+\input{sections/evaluation}
+\input{sections/results}
+\input{sections/conclusion}
+
+\section*{Acknowledgments}
+The authors would like to thank the manufacturing facility that provided access to their equipment and data for this research. We also acknowledge the support of the Department of Computer Science and Engineering at Inderprastha Engineering College.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
